@@ -1,13 +1,24 @@
 import React from 'react';
-import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
+import NavBar from './component/NavBar';
+import ItemListContainer from './component/ItemListContainer';
+import {BrowserRouter, Routes, Route, link} from 'react-router-dom';
+import './App.css';
+import ItemDetailContainer from './component/ItemDetailContainer';
+
+
+
 
 function App() {
   return (
-    <div>
+      <BrowserRouter>
       <NavBar />
-      <ItemListContainer greeting="¡Bienvenidos a ELEXHIBIDOR!" />
-    </div>
+      <Routes>
+      <Route exact path="/" element={<ItemListContainer />} />
+      <Route exact path="/category/:categoryName" element={<ItemListContainer />} />
+      <Route exact path="/item/:id" element={<ItemDetailContainer />} />
+      </Routes>
+      </BrowserRouter>
+  
   );
 }
 
