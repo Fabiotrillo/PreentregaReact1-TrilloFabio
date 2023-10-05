@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ProductCard from './ProductCard';
 
@@ -8,7 +7,7 @@ const ItemList = ({ products }) => {
       <h2>Nuestros Productos!</h2>
       <div className='contenedor-productos'>
         {products.map((product) => (
-          <ProductCard key={product} product={product} />
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </div>

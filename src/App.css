@@ -35,4 +35,19 @@ h2{
 
 .loading{
     text-align: center;
+    font-size: 1.3rem;
 }
+
+#btn-decrement{
+ margin: 3px;
+ background-color: black;
+ color:white;
+}
+
+#btn-increment{
+ margin:3px;
+ background-color: black;
+ color: white;
+}
+
+

@@ -1,11 +1,11 @@
 import React from 'react';
-import CartWidget from './CartWidget';
-import {Link} from 'react-router-dom'
+import Cart from './Cart';
+import {Link} from 'react-router-dom';
 
 const NavBar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-dark">
-      <div className=" container d-flex justify-content-beetwen">
+    <nav className="navbar navbar-expand-lg bg-dark">
+      <div className=" container d-flex">
       <Link className="navbar-brand text-warning " to="/">ELEXHIBIDOR</Link>
         <div className="collapse navbar-collapse">
           <ul className="navbar-nav mr-auto">
@@ -19,7 +19,8 @@ const NavBar = () => {
             <Link className="nav-link text-white" to="/category/perchas">Perchas</Link>
             </li>
           </ul>
-          <CartWidget />
+          <Link to="/cart/"><button className="btn btn-dark"><i id="carrito-item" className="fa-solid fa-cart-shopping"></i></button></Link>
+          <Cart/>
         </div>
       </div>
     </nav>
