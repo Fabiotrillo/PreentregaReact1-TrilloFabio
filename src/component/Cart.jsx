@@ -1,7 +1,7 @@
 import React from 'react';
 import { useCartContext } from '../context/cartContext';
 import CartWidget from './WidgetCart';
-import { sendOrderToFirestore } from '../firebase'; // Asegúrate de importar esta función
+import { sendOrderToFirestore } from '../firebase'; 
 
 const Cart = () => {
   const { cart, calculateTotal, clearCart } = useCartContext();
@@ -16,8 +16,8 @@ const Cart = () => {
           phone:  "20304050"
           
         },
-        products: cart, // Utiliza los productos del carrito
-        total: calculateTotal(cart), // Calcula el total a partir del carrito
+        products: cart, 
+        total: calculateTotal(cart), 
       };
 
       // Envía la orden de compra a Firestore
@@ -25,13 +25,13 @@ const Cart = () => {
 
       console.log("Orden simulada creada con ID:", orderId);
 
-      // Limpia el carrito después de enviar la orden
+      
       clearCart();
 
-      // Puedes mostrar un mensaje de éxito o redirigir al usuario después de la simulación
+      
     } catch (error) {
       console.error("Error al simular la orden de compra:", error);
-      // Puedes mostrar un mensaje de error en caso de fallo
+      
     }
   };
 
