@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductCard from './ProductCard';
+import '@fontsource/roboto/300.css';
 
 const ItemList = ({ products }) => {
   return (

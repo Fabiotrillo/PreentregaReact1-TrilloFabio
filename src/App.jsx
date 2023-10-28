@@ -1,19 +1,21 @@
 import React from 'react';
 import NavBar from './component/NavBar';
 import ItemListContainer from './component/ItemListContainer';
-import {BrowserRouter, Routes, Route, link} from 'react-router-dom';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import './App.css';
 import ItemDetailContainer from './component/ItemDetailContainer';
-import { CartContext } from './context/cartContext';
-import { dividerClasses } from '@mui/material';
+import  CartProvider  from './context/cartContext';
 import Cart from './component/Cart';
+import '@fontsource/roboto/300.css';
 
 
+
+  
 
 function App() {
   return (
     <div>
-      <CartContext.Provider value={[]}>
+      <CartProvider>
       <BrowserRouter>
       <NavBar />
       <Routes>
@@ -21,9 +23,10 @@ function App() {
       <Route exact path="/category/:categoryName" element={<ItemListContainer />} />
       <Route exact path="/item/:id" element={<ItemDetailContainer />} />
       <Route exact path="/cart/" element={<Cart />}></Route>
+    
       </Routes>
       </BrowserRouter>
-      </CartContext.Provider>
+      </CartProvider>
     </div>
   );
 }

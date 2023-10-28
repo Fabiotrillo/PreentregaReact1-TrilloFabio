@@ -2,19 +2,22 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import {Link} from 'react-router-dom'
 import { useCartContext } from '../context/cartContext';
 
 
 
-const ProductCard = ({ product }) => {
-  const { name, img, price } = product;
-  const { addProduct } = useCartContext();
 
-  const handleAddToCart = () => {
-    addProduct(product, 1);
+
+const CartWidget = ({ product }) => {
+  const { name, img, price, quantity } = product;
+  const { removeProduct } = useCartContext();
+
+  const handleRemoveClick = () => {
+    removeProduct(product.id);
   };
+
 
   return (
     <Card sx={{ maxWidth: 500 }}>
@@ -30,16 +33,16 @@ const ProductCard = ({ product }) => {
       <Typography variant="body2" color="text.secondary">
        Precio:$ {price}
       </Typography>
+      <Typography variant="body2" color="text.secondary">
+          Cantidad: {quantity}
+        </Typography>
     </CardContent>
     <CardActions>
-    
-      <Link className='btn btn-primary' to={`/item/${product.id}`}>Ver detalles</Link>
-      <button className='btn btn-success' onClick={handleAddToCart}>
-           Agregar al carrito
-        </button>
+      <Button className='btn' size="small">Comprar</Button>
+      <Button className='btn' onClick={handleRemoveClick}><i className="fas fa-trash"></i></Button>
     </CardActions>
   </Card>
   );
 }
 
-export default ProductCard;
+export default CartWidget;
