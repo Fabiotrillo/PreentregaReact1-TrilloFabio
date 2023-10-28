@@ -20,7 +20,7 @@ const CartWidget = ({ product }) => {
 
 
   return (
-    <Card sx={{ maxWidth: 500 }}>
+    <Card sx={{ maxWidth: 600 }}>
     <CardMedia
       sx={{ height: 300 }}
       image={img}

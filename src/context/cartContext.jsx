@@ -35,13 +35,9 @@ const CartProvider = ({ children }) => {
 
   const clearCart = () => setCart([]);
 
-  const calculateTotal = (cart) => {
-  let totalPrice = 0;
-  cart.forEach((product) => {
-    totalPrice += product.price * product.quantity;
-  });
-  return totalPrice;
-};
+  const calculateTotal = () => {
+    return cart.reduce((acc, prod) => acc + prod.price * prod.quantity,0)
+  }
 
 
   return (

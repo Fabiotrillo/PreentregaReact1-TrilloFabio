@@ -1,5 +1,6 @@
 import { initializeApp} from "firebase/app";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
+
 
 
 // Your web app's Firebase configuration
@@ -15,22 +16,8 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-const db = getFirestore(app)
+export const db = getFirestore(app)
 
-
-export const sendOrderToFirestore = async (orderData) => {
-  try {
-    // Agregar la orden a la colección "pedidos" utilizando la instancia de db existente
-    const docRef = await addDoc(collection(db, "pedidos"), orderData);
-
-    console.log("Orden de compra enviada a Firestore con ID:", docRef.id);
-
-    return docRef.id; // Puedes devolver el ID de la orden si es necesario
-  } catch (error) {
-    console.error("Error al enviar la orden de compra a Firestore:", error);
-    throw error;
-  }
-};
 
 export function getProducts() {
     return db.collection('items').get()
