@@ -21,27 +21,27 @@ const CartWidget = ({ product }) => {
 
   return (
     <Card sx={{ maxWidth: 600 }}>
-    <CardMedia
-      sx={{ height: 300 }}
-      image={img}
-      title={name}
-    />
-    <CardContent>
-      <Typography gutterBottom variant="h5" component="div">
-        {name}
-      </Typography>
-      <Typography variant="body2" color="text.secondary">
-       Precio:$ {price}
-      </Typography>
-      <Typography variant="body2" color="text.secondary">
+      <CardMedia
+        sx={{ height: 300 }}
+        image={img}
+        title={name}
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {name}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          Precio:$ {price}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
           Cantidad: {quantity}
         </Typography>
-    </CardContent>
-    <CardActions>
-      <Button className='btn' size="small">Comprar</Button>
-      <Button className='btn' onClick={handleRemoveClick}><i className="fas fa-trash"></i></Button>
-    </CardActions>
-  </Card>
+      </CardContent>
+      <CardActions>
+        <Button className='btn' size="small">Comprar</Button>
+        <Button className='btn' onClick={handleRemoveClick}><i className="fas fa-trash"></i></Button>
+      </CardActions>
+    </Card>
   );
 }
 

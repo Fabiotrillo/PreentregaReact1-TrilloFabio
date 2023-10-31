@@ -4,8 +4,13 @@ import CartWidget from './WidgetCart';
 import { Link } from 'react-router-dom';
 
 
+
+
+
 const Cart = () => {
   const { cart, calculateTotal  } = useCartContext();
+
+ 
 
   return (
     <div id="cart-container-product">
@@ -22,7 +27,7 @@ const Cart = () => {
         <p className='carrito-info'>El carrito está vacío.</p>
       )}
       <p className='price-total'>Total a pagar: ${calculateTotal(cart)}</p>
-      <Link className='finally-order'  to="/Checkout"><button>Detalle de compra</button></Link>
+      <Link className='finally-order'  to="/Checkout"><button>Registrarse y finalizar compra</button></Link>
     </div>
   );
 };
